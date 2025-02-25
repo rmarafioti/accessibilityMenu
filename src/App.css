@@ -5,6 +5,10 @@ article {
   margin: 2rem;
 }
 
+.header, .subHeaders {
+  margin: 4rem;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
