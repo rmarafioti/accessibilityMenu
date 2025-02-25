@@ -1,7 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0px solid green;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  width: 100%;
+  min-height: 100vh;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -22,11 +32,23 @@ a:hover {
   color: #535bf2;
 }
 
-body {
+/*body {
   margin: 0;
   display: flex;
-  /*min-width: 320px;
-  min-height: 100vh;*/
+  min-height: 100vh;
+}*/
+
+nav, footer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid  #242424;
+}
+
+footer {
+  border-top: 1px solid  #242424;
+  border-bottom: none;
 }
 
 h1 {
@@ -36,7 +58,7 @@ h1 {
 
 p {
   text-align: center;
-  width: 460px;
+  width: 500px;
 }
 
 button {
@@ -68,5 +90,14 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  nav {
+    border-bottom: 1px solid  #f9f9f9;
+  }
+  footer {
+    border-top: 1px solid  #f9f9f9;
   }
 }

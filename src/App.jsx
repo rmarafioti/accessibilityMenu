@@ -2,7 +2,7 @@ import "./App.css";
 
 function App() {
   return (
-    <>
+    <article>
       <div>
         <img
           src="https://fastly.picsum.photos/id/794/200/300.jpg?hmac=uZge4lPPf2bQz7AS6pyH7_nwhFp9IQ3OPKOpQ33Zypk"
@@ -60,7 +60,7 @@ function App() {
         Euismod metus accumsan venenatis tempor mus ut habitant. Proin curae mi
         porta interdum penatibus ridiculus tincidunt ligula id.
       </p>
-    </>
+    </article>
   );
 }
 
