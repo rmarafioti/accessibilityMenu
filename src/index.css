@@ -6,8 +6,6 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-
   line-height: 1.5;
   font-weight: 400;
 
@@ -24,6 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* downloaded dyslexic font styles*/
 @font-face {
   font-family: "OpenDyslexic";
   src: url("./fonts/OpenDyslexic-Regular.woff2") format("woff2"),
@@ -56,9 +55,8 @@
   font-style: italic;
 }
 
-
 body {
-  /*font-family: "OpenDyslexic", Arial, sans-serif;*/
+  font-family: "OpenDyslexic", Arial, sans-serif;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -103,9 +101,6 @@ h4 {
 }
 
 p {
-  font-family: "OpenDyslexic", Arial, sans-serif;
-  font-weight: bold;
-  font-style: italic;
   max-width: 500px;
   margin-bottom: 4rem;
 }
