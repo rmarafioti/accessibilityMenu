@@ -4,7 +4,7 @@
     align-items: center;
   }
   
-  .toggleConatiner {
+  .toggleContainer {
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -29,9 +29,15 @@
     background-color: rgba(255, 255, 255, 0.87);
     height: 20px;
     width: 20px;
+    top: 2.5px;
+    left: 4px;
     border-radius: 50px;
     transition: left 0.3s ease-in-out;
     margin-bottom: 0rem;
+  }
+
+  .toggled {
+    left: calc(100% - 24px);
   }
   
   @media (max-width: 600px) {

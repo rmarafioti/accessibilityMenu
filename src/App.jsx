@@ -1,8 +1,13 @@
 import "./App.css";
 
-function App() {
+function App({ accessibility }) {
+  const { isImagesHidden, isImagesGreyScale } = accessibility;
+
   return (
-    <article>
+    <article
+      className={`${isImagesHidden ? "hide-images" : ""}
+    ${isImagesGreyScale ? "grey-images" : ""}`}
+    >
       <div>
         <img
           src="https://fastly.picsum.photos/id/794/200/300.jpg?hmac=uZge4lPPf2bQz7AS6pyH7_nwhFp9IQ3OPKOpQ33Zypk"

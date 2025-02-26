@@ -5,7 +5,7 @@ import { FaMinus } from "react-icons/fa6";
 import Toggle from "../components/Toggle";
 import styles from "../layout/navbar.module.css";
 
-export default function Navbar() {
+export default function Navbar({ accessibility, toggleSetting }) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
   return (
     <>
@@ -55,15 +55,21 @@ export default function Navbar() {
               </p>
             </div>
             <div className={styles.controlSection}>
-              <p className={styles.controlItem}>Hide Images</p>
+              <p className={styles.controlItem}>Remove Image Color</p>
               <p className={styles.controlItem}>
-                <Toggle />
+                <Toggle
+                  onToggle={() => toggleSetting("isImagesGreyScale")}
+                  isToggled={accessibility.isImagesGreyScale}
+                />
               </p>
             </div>
             <div className={styles.controlSection}>
-              <p className={styles.controlItem}>Remove Color</p>
+              <p className={styles.controlItem}>Hide Images</p>
               <p className={styles.controlItem}>
-                <Toggle />
+                <Toggle
+                  onToggle={() => toggleSetting("isImagesHidden")}
+                  isToggled={accessibility.isImagesHidden}
+                />
               </p>
             </div>
             <div className={styles.controlSection}>
