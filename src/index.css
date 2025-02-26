@@ -1,7 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border: 0px solid green;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  width: 100%;
+  min-height: 100vh;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -13,6 +22,44 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* downloaded dyslexic font styles*/
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("./fonts/OpenDyslexic-Regular.woff2") format("woff2"),
+       url("./fonts/OpenDyslexic-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("./fonts/OpenDyslexic-Bold.woff2") format("woff2"),
+       url("./fonts/OpenDyslexic-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("./fonts/OpenDyslexic-Italic.woff2") format("woff2"),
+       url("./fonts/OpenDyslexic-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("./fonts/OpenDyslexic-Bold-Italic.woff2") format("woff2"),
+       url("./fonts/OpenDyslexic-Bold-Italic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  font-family: "OpenDyslexic", Arial, sans-serif;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,11 +69,23 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
+nav,
+footer {
   display: flex;
-  /*min-width: 320px;
-  min-height: 100vh;*/
+  justify-content: center;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid #242424;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  border-top: 1px solid #242424;
+  border-bottom: none;
 }
 
 h1 {
@@ -34,9 +93,16 @@ h1 {
   line-height: 1.1;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  margin: 1rem;
+}
+
 p {
-  text-align: center;
-  width: 460px;
+  max-width: 500px;
+  margin-bottom: 4rem;
 }
 
 button {
@@ -51,22 +117,93 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #242424;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #ffffff;
   }
   button {
-    background-color: #f9f9f9;
+    color: #ffffff;
+    background-color: #242424;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  nav {
+    border-bottom: 1px solid #f9f9f9;
+  }
+  footer {
+    border-top: 1px solid #f9f9f9;
+  }
+  button {
+    color: #242424;
+    background-color: #ffffff;
+  }
+  button:hover {
+    border-color: #ffffff;
+  }
+}*/
+
+/* Light Mode (Default) */
+[data-theme="light"] {
+  --text-color: #213547;
+  --background-color: #ffffff;
+  --link-hover: #ffffff;
+  --button-text: #ffffff;
+  --button-bg: #242424;
+  --nav-border: #242424;
+  --footer-border: #242424;
+}
+
+[data-theme="light"] {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+[data-theme="light"] a:hover {
+  color: var(--link-hover);
+}
+
+[data-theme="light"] button {
+  color: var(--button-text);
+  background-color: var(--button-bg);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --text-color: #f9f9f9;
+  --background-color: #121212;
+  --link-hover: #f9f9f9;
+  --button-text: #242424;
+  --button-bg: #ffffff;
+  --nav-border: #f9f9f9;
+  --footer-border: #f9f9f9;
+}
+
+[data-theme="dark"] nav {
+  border-bottom: 1px solid var(--nav-border);
+}
+
+[data-theme="dark"] footer {
+  border-top: 1px solid var(--footer-border);
+}
+
+[data-theme="dark"] button {
+  color: var(--button-text);
+  background-color: var(--button-bg);
+}
+
+[data-theme="dark"] button:hover {
+  border-color: var(--link-hover);
+}
+
