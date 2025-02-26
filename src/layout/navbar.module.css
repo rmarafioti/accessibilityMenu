@@ -82,7 +82,7 @@
     margin: 1rem 0rem .5rem 0rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
     .accessMenu {
         background-color: #242424;
         border: 1px solid #ffffff;
@@ -94,5 +94,21 @@
     .resetButton, .closeButton {
         border-color: #ffffff; 
     }
-}
+}*/
+
+[data-theme="dark"] .accessMenu {
+    background-color: #242424;
+    border: 1px solid #ffffff;
+    border-right: none;
+  }
+  
+  [data-theme="dark"] .sizeItem {
+    color: #242424;
+  }
+  
+  [data-theme="dark"] .resetButton,
+  [data-theme="dark"] .closeButton {
+    border-color: #ffffff;
+  }
+  
 

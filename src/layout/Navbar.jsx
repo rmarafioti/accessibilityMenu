@@ -33,7 +33,10 @@ export default function Navbar({ accessibility, toggleSetting }) {
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Theme</p>
               <p className={styles.controlItem}>
-                <Toggle />
+                <Toggle
+                  onToggle={() => toggleSetting("isThemeDark")}
+                  isToggled={accessibility.isThemeDark}
+                />
               </p>
             </div>
             <div className={styles.controlSection}>
@@ -45,13 +48,19 @@ export default function Navbar({ accessibility, toggleSetting }) {
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Remove Font Style</p>
               <p className={styles.controlItem}>
-                <Toggle />
+                <Toggle
+                  onToggle={() => toggleSetting("isRemoveFontStyle")}
+                  isToggled={accessibility.isRemoveFontStyle}
+                />
               </p>
             </div>
             <div className={styles.controlSection}>
-              <p className={styles.controlItem}>Dyslexic Font</p>
+              <p className={styles.controlItem}>Add Dyslexic Font</p>
               <p className={styles.controlItem}>
-                <Toggle />
+                <Toggle
+                  onToggle={() => toggleSetting("isDyslexicFont")}
+                  isToggled={accessibility.isDyslexicFont}
+                />
               </p>
             </div>
             <div className={styles.controlSection}>

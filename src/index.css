@@ -124,7 +124,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/*@media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -152,4 +152,58 @@ button:focus-visible {
   button:hover {
     border-color: #ffffff;
   }
+}*/
+
+/* Light Mode (Default) */
+[data-theme="light"] {
+  --text-color: #213547;
+  --background-color: #ffffff;
+  --link-hover: #ffffff;
+  --button-text: #ffffff;
+  --button-bg: #242424;
+  --nav-border: #242424;
+  --footer-border: #242424;
 }
+
+[data-theme="light"] {
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+[data-theme="light"] a:hover {
+  color: var(--link-hover);
+}
+
+[data-theme="light"] button {
+  color: var(--button-text);
+  background-color: var(--button-bg);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --text-color: #f9f9f9;
+  --background-color: #121212;
+  --link-hover: #f9f9f9;
+  --button-text: #242424;
+  --button-bg: #ffffff;
+  --nav-border: #f9f9f9;
+  --footer-border: #f9f9f9;
+}
+
+[data-theme="dark"] nav {
+  border-bottom: 1px solid var(--nav-border);
+}
+
+[data-theme="dark"] footer {
+  border-top: 1px solid var(--footer-border);
+}
+
+[data-theme="dark"] button {
+  color: var(--button-text);
+  background-color: var(--button-bg);
+}
+
+[data-theme="dark"] button:hover {
+  border-color: var(--link-hover);
+}
+

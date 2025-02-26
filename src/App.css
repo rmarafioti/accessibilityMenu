@@ -9,12 +9,20 @@ article {
   margin: 4rem;
 }
 
+.grey-images img {
+  filter: grayscale(100%);
+}
+
 .hide-images img {
   visibility: hidden;
 }
 
-.grey-images img {
-  filter: grayscale(100%);
+.accessible-font {
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.dyslexic-font {
+  font-family: "OpenDyslexic", Arial, sans-serif;
 }
 
 
