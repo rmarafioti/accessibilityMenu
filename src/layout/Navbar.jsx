@@ -9,6 +9,7 @@ export default function Navbar({
   accessibility,
   adjustFontSize,
   toggleSetting,
+  resetAccessibility,
 }) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -44,12 +45,12 @@ export default function Navbar({
                 />
               </p>
             </div>
-            <div className={styles.controlSection}>
+            {/*<div className={styles.controlSection}>
               <p className={styles.controlItem}>Cursor Highlighting</p>
               <p className={styles.controlItem}>
                 <Toggle />
               </p>
-            </div>
+            </div>*/}
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Remove Font Style</p>
               <p className={styles.controlItem}>
@@ -111,7 +112,9 @@ export default function Navbar({
               </div>
             </div>
           </section>
-          <button className={styles.resetButton}>Reset</button>
+          <button className={styles.resetButton} onClick={resetAccessibility}>
+            Reset
+          </button>
         </menu>
       )}
     </>

@@ -38,12 +38,25 @@ function Main() {
     setAccessibility((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
+  const resetAccessibility = () => {
+    setAccessibility({
+      isThemeDark: window.matchMedia("(prefers-color-scheme: dark)").matches,
+      isImagesHidden: false,
+      isImagesGreyScale: false,
+      isRemoveFontStyle: false,
+      isDyslexicFont: false,
+      isCursorLarge: false,
+      fontSizeAdjust: 1,
+    });
+  };
+
   return (
     <StrictMode>
       <Navbar
         accessibility={accessibility}
         adjustFontSize={adjustFontSize}
         toggleSetting={toggleSetting}
+        resetAccessibility={resetAccessibility}
       />
       <App accessibility={accessibility} />
       <Footer />
