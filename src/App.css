@@ -5,6 +5,22 @@ article {
   margin: 2rem;
 }
 
+.appContainer {
+  font-size: 1rem;
+}
+
+.header {
+  font-size: 2.5em; /* ✅ 2.5x the size of .app-container */
+}
+
+.subHeader {
+  font-size: 2em; /* ✅ 2x the size of .app-container */
+}
+
+p {
+  font-size: 1.2em; /* ✅ 1.5x the size of .app-container */
+}
+
 .header, .subHeaders {
   margin: 4rem;
 }

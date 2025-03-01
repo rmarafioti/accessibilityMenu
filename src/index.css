@@ -55,6 +55,7 @@
   font-style: italic;
 }
 
+
 body {
   font-family: "OpenDyslexic", Arial, sans-serif;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -89,7 +90,7 @@ footer {
 }
 
 h1 {
-  font-size: 3.2em;
+  /*font-size: 3rem;*/
   line-height: 1.1;
 }
 
@@ -101,6 +102,7 @@ h4 {
 }
 
 p {
+  /*font-size: 1rem;*/
   max-width: 500px;
   margin-bottom: 4rem;
 }
@@ -123,36 +125,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/*@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #ffffff;
-  }
-  button {
-    color: #ffffff;
-    background-color: #242424;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  nav {
-    border-bottom: 1px solid #f9f9f9;
-  }
-  footer {
-    border-top: 1px solid #f9f9f9;
-  }
-  button {
-    color: #242424;
-    background-color: #ffffff;
-  }
-  button:hover {
-    border-color: #ffffff;
-  }
-}*/
 
 /* Light Mode (Default) */
 [data-theme="light"] {

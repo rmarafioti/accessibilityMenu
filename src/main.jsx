@@ -12,6 +12,7 @@ function Main() {
     isImagesGreyScale: false,
     isRemoveFontStyle: false,
     isDyslexicFont: false,
+    fontSizeAdjust: 1,
   });
 
   useEffect(() => {
@@ -21,13 +22,24 @@ function Main() {
     );
   }, [accessibility.isThemeDark]);
 
+  const adjustFontSize = (increment) => {
+    setAccessibility((prev) => ({
+      ...prev,
+      fontSizeAdjust: Math.max(1, prev.fontSizeAdjust + increment),
+    }));
+  };
+
   const toggleSetting = (key) => {
     setAccessibility((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
     <StrictMode>
-      <Navbar accessibility={accessibility} toggleSetting={toggleSetting} />
+      <Navbar
+        accessibility={accessibility}
+        adjustFontSize={adjustFontSize}
+        toggleSetting={toggleSetting}
+      />
       <App accessibility={accessibility} />
       <Footer />
     </StrictMode>

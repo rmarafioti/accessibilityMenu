@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 120px; 
+    top: 125px; 
     right: 0px; 
     background: white;
     border: 1px solid black;
@@ -17,6 +17,7 @@
     padding-right: 2rem;
     padding-left: 2rem;
     width: 400px;
+  
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     visibility: visible;
@@ -73,6 +74,23 @@
     border: 1px solid #242424;
 }
 
+.accessMenu {
+    font-size: 16px; /* ✅ Prevents scaling */
+    transform: scale(1); /* ✅ Ensures it doesn't inherit global scaling */
+  }
+  
+  .accessMenu *,
+  .accessMenu p,
+  .accessMenu button {
+    font-size: 16px; /* ✅ Forces all child elements to stay fixed */
+  }
+
+  .accessMenu .sizeItem {
+    font-size: 2.6rem; 
+}
+
+
+
 .resetButton {
     color: #242424;
     font-weight: bold;
@@ -81,20 +99,6 @@
     align-self: flex-end;
     margin: 1rem 0rem .5rem 0rem;
 }
-
-/*@media (prefers-color-scheme: dark) {
-    .accessMenu {
-        background-color: #242424;
-        border: 1px solid #ffffff;
-        border-right: none;
-    }
-    .sizeItem {
-        color: #242424;
-    }
-    .resetButton, .closeButton {
-        border-color: #ffffff; 
-    }
-}*/
 
 [data-theme="dark"] .accessMenu {
     background-color: #242424;
