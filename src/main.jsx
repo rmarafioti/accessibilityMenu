@@ -12,6 +12,8 @@ function Main() {
     isImagesGreyScale: false,
     isRemoveFontStyle: false,
     isDyslexicFont: false,
+    isCursorLarge: false,
+    fontSizeAdjust: 1,
   });
 
   useEffect(() => {
@@ -21,13 +23,41 @@ function Main() {
     );
   }, [accessibility.isThemeDark]);
 
+  useEffect(() => {
+    document.body.classList.toggle("large-cursor", accessibility.isCursorLarge);
+  }, [accessibility.isCursorLarge]);
+
+  const adjustFontSize = (increment) => {
+    setAccessibility((prev) => ({
+      ...prev,
+      fontSizeAdjust: Math.max(1, prev.fontSizeAdjust + increment),
+    }));
+  };
+
   const toggleSetting = (key) => {
     setAccessibility((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
+  const resetAccessibility = () => {
+    setAccessibility({
+      isThemeDark: window.matchMedia("(prefers-color-scheme: dark)").matches,
+      isImagesHidden: false,
+      isImagesGreyScale: false,
+      isRemoveFontStyle: false,
+      isDyslexicFont: false,
+      isCursorLarge: false,
+      fontSizeAdjust: 1,
+    });
+  };
+
   return (
     <StrictMode>
-      <Navbar accessibility={accessibility} toggleSetting={toggleSetting} />
+      <Navbar
+        accessibility={accessibility}
+        adjustFontSize={adjustFontSize}
+        toggleSetting={toggleSetting}
+        resetAccessibility={resetAccessibility}
+      />
       <App accessibility={accessibility} />
       <Footer />
     </StrictMode>

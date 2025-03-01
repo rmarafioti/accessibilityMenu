@@ -5,8 +5,14 @@ import { FaMinus } from "react-icons/fa6";
 import Toggle from "../components/Toggle";
 import styles from "../layout/navbar.module.css";
 
-export default function Navbar({ accessibility, toggleSetting }) {
+export default function Navbar({
+  accessibility,
+  adjustFontSize,
+  toggleSetting,
+  resetAccessibility,
+}) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+
   return (
     <>
       <nav>
@@ -39,12 +45,12 @@ export default function Navbar({ accessibility, toggleSetting }) {
                 />
               </p>
             </div>
-            <div className={styles.controlSection}>
+            {/*<div className={styles.controlSection}>
               <p className={styles.controlItem}>Cursor Highlighting</p>
               <p className={styles.controlItem}>
                 <Toggle />
               </p>
-            </div>
+            </div>*/}
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Remove Font Style</p>
               <p className={styles.controlItem}>
@@ -82,27 +88,33 @@ export default function Navbar({ accessibility, toggleSetting }) {
               </p>
             </div>
             <div className={styles.controlSection}>
-              <p className={styles.controlItem}>Scroll to Content</p>
-              <p className={styles.controlItem}>
-                <Toggle />
-              </p>
-            </div>
-            <div className={styles.controlSection}>
               <p className={styles.controlItem}>Cursor Size</p>
-              <div className={styles.resizingContainer}>
-                <FaMinus className={styles.sizeItem} />
-                <FaPlus className={styles.sizeItem} />
-              </div>
+              <p className={styles.controlItem}>
+                <Toggle
+                  onToggle={() => toggleSetting("isCursorLarge")}
+                  isToggled={accessibility.isCursorLarge}
+                />
+              </p>
             </div>
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Font Size</p>
               <div className={styles.resizingContainer}>
-                <FaMinus className={styles.sizeItem} />
-                <FaPlus className={styles.sizeItem} />
+                <FaMinus
+                  className={styles.sizeItem}
+                  onClick={() => adjustFontSize(-0.1)}
+                />
+                <FaPlus
+                  className={styles.sizeItem}
+                  onClick={() => {
+                    adjustFontSize(0.1);
+                  }}
+                />
               </div>
             </div>
           </section>
-          <button className={styles.resetButton}>Reset</button>
+          <button className={styles.resetButton} onClick={resetAccessibility}>
+            Reset
+          </button>
         </menu>
       )}
     </>

@@ -55,6 +55,11 @@
   font-style: italic;
 }
 
+.large-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="black" stroke="white" stroke-width="2" d="M3 2v20l7-7l5 7l6-4l-5-7l7-5z"/></svg>') 12 12, auto;
+}
+
+
 body {
   font-family: "OpenDyslexic", Arial, sans-serif;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -89,7 +94,6 @@ footer {
 }
 
 h1 {
-  font-size: 3.2em;
   line-height: 1.1;
 }
 
@@ -123,36 +127,6 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/*@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #ffffff;
-  }
-  button {
-    color: #ffffff;
-    background-color: #242424;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  nav {
-    border-bottom: 1px solid #f9f9f9;
-  }
-  footer {
-    border-top: 1px solid #f9f9f9;
-  }
-  button {
-    color: #242424;
-    background-color: #ffffff;
-  }
-  button:hover {
-    border-color: #ffffff;
-  }
-}*/
 
 /* Light Mode (Default) */
 [data-theme="light"] {

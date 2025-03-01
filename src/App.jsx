@@ -2,21 +2,24 @@ import "./App.css";
 
 function App({ accessibility }) {
   const {
-    isThemeDark,
     isImagesHidden,
     isImagesGreyScale,
     isRemoveFontStyle,
     isDyslexicFont,
+    fontSizeAdjust,
   } = accessibility;
 
   return (
     <article
-      className={`${isImagesHidden ? "hide-images" : ""}
+      className={`appContainer
+        ${isImagesHidden ? "hide-images" : ""}
     ${isImagesGreyScale ? "grey-images" : ""}
     ${isRemoveFontStyle ? "accessible-font" : ""}
     ${isDyslexicFont ? "dyslexic-font" : ""}
-    ${isThemeDark ? "dark" : "light"}
     `}
+      style={{
+        fontSize: `${1 * fontSizeAdjust}rem`,
+      }}
     >
       <div>
         <img
