@@ -12,6 +12,7 @@ function Main() {
     isImagesGreyScale: false,
     isRemoveFontStyle: false,
     isDyslexicFont: false,
+    isCursorLarge: false,
     fontSizeAdjust: 1,
   });
 
@@ -21,6 +22,10 @@ function Main() {
       accessibility.isThemeDark ? "dark" : "light"
     );
   }, [accessibility.isThemeDark]);
+
+  useEffect(() => {
+    document.body.classList.toggle("large-cursor", accessibility.isCursorLarge);
+  }, [accessibility.isCursorLarge]);
 
   const adjustFontSize = (increment) => {
     setAccessibility((prev) => ({

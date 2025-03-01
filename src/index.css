@@ -55,6 +55,12 @@
   font-style: italic;
 }
 
+.large-cursor {
+  
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="black" stroke="white" stroke-width="2" d="M3 2v20l7-7l5 7l6-4l-5-7l7-5z"/></svg>') 12 12, auto;
+  
+}
+
 
 body {
   font-family: "OpenDyslexic", Arial, sans-serif;
@@ -90,7 +96,6 @@ footer {
 }
 
 h1 {
-  /*font-size: 3rem;*/
   line-height: 1.1;
 }
 
@@ -102,7 +107,6 @@ h4 {
 }
 
 p {
-  /*font-size: 1rem;*/
   max-width: 500px;
   margin-bottom: 4rem;
 }

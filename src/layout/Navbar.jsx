@@ -87,17 +87,13 @@ export default function Navbar({
               </p>
             </div>
             <div className={styles.controlSection}>
-              <p className={styles.controlItem}>Scroll to Content</p>
-              <p className={styles.controlItem}>
-                <Toggle />
-              </p>
-            </div>
-            <div className={styles.controlSection}>
               <p className={styles.controlItem}>Cursor Size</p>
-              <div className={styles.resizingContainer}>
-                <FaMinus className={styles.sizeItem} />
-                <FaPlus className={styles.sizeItem} />
-              </div>
+              <p className={styles.controlItem}>
+                <Toggle
+                  onToggle={() => toggleSetting("isCursorLarge")}
+                  isToggled={accessibility.isCursorLarge}
+                />
+              </p>
             </div>
             <div className={styles.controlSection}>
               <p className={styles.controlItem}>Font Size</p>
