@@ -4,8 +4,6 @@ import AccessMenu from "./components/AccessMenu.jsx";
 import Navbar from "./layout/Navbar.jsx";
 import Footer from "./layout/Footer.jsx";
 
-import cursorSVG from "./cursors/arrow.svg";
-
 import "./styles/globalmenucontrols.css";
 
 export default function Root() {
@@ -28,9 +26,11 @@ export default function Root() {
 
   useEffect(() => {
     if (accessibility.isCursorLarge) {
-      document.body.style.cursor = `url(${cursorSVG}), auto`;
+      document.body.classList.add("large-cursor");
+      console.log("Cursor is LARGE", document.body.className);
     } else {
-      document.body.style.cursor = "auto";
+      document.body.classList.remove("large-cursor");
+      console.log("Cursor is NORMAL", document.body.className);
     }
   }, [accessibility.isCursorLarge]);
 

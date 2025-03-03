@@ -4,6 +4,7 @@ export default function Home() {
   return (
     <>
       <div>
+        <img src="/arrow.svg" alt="Test SVG" width="100" />
         <img
           src="https://fastly.picsum.photos/id/794/200/300.jpg?hmac=uZge4lPPf2bQz7AS6pyH7_nwhFp9IQ3OPKOpQ33Zypk"
           alt="A silhouette of a hill lined with trees against a dramatic sunset sky. The horizon glows with warm orange and yellow hues, blending into deep blue and gray clouds, creating a serene and atmospheric landscape."
