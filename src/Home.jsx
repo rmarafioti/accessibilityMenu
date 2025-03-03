@@ -1,26 +1,8 @@
 import "./App.css";
 
-function App({ accessibility }) {
-  const {
-    isImagesHidden,
-    isImagesGreyScale,
-    isRemoveFontStyle,
-    isDyslexicFont,
-    fontSizeAdjust,
-  } = accessibility;
-
+export default function Home() {
   return (
-    <article
-      className={`appContainer
-        ${isImagesHidden ? "hide-images" : ""}
-    ${isImagesGreyScale ? "grey-images" : ""}
-    ${isRemoveFontStyle ? "accessible-font" : ""}
-    ${isDyslexicFont ? "dyslexic-font" : ""}
-    `}
-      style={{
-        fontSize: `${1 * fontSizeAdjust}rem`,
-      }}
-    >
+    <>
       <div>
         <img
           src="https://fastly.picsum.photos/id/794/200/300.jpg?hmac=uZge4lPPf2bQz7AS6pyH7_nwhFp9IQ3OPKOpQ33Zypk"
@@ -78,8 +60,6 @@ function App({ accessibility }) {
         Euismod metus accumsan venenatis tempor mus ut habitant. Proin curae mi
         porta interdum penatibus ridiculus tincidunt ligula id.
       </p>
-    </article>
+    </>
   );
 }
-
-export default App;

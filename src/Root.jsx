@@ -1,14 +1,13 @@
-/*import { StrictMode, useState, useEffect } from "react";
-import { createRoot } from "react-dom/client";*/
+import { Outlet } from "react-router";
+import { useState, useEffect } from "react";
+import AccessMenu from "./components/AccessMenu.jsx";
+import Navbar from "./layout/Navbar.jsx";
+import Footer from "./layout/Footer.jsx";
+
 import "./index.css";
-import Root from "./Root.jsx";
-import Home from "./Home.jsx";
+import "./app.css";
 
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router";
-import ReactDOM from "react-dom/client";
-
-/*function Main() {
+export default function Root() {
   const [accessibility, setAccessibility] = useState({
     isThemeDark: window.matchMedia("(prefers-color-scheme: dark)").matches,
     isImagesHidden: false,
@@ -18,6 +17,7 @@ import ReactDOM from "react-dom/client";
     isCursorLarge: false,
     fontSizeAdjust: 1,
   });
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute(
@@ -53,30 +53,29 @@ import ReactDOM from "react-dom/client";
     });
   };
 
-  /*return (
-    <StrictMode>
-      <Navbar
+  return (
+    <>
+      <AccessMenu
         accessibility={accessibility}
-        adjustFontSize={adjustFontSize}
         toggleSetting={toggleSetting}
+        adjustFontSize={adjustFontSize}
         resetAccessibility={resetAccessibility}
       />
-      <App accessibility={accessibility} />
-      <Footer />
-    </StrictMode>
+      <article
+        className={`appContainer
+            ${accessibility.isImagesHidden ? "hide-images" : ""}
+        ${accessibility.isImagesGreyScale ? "grey-images" : ""}
+        ${accessibility.isRemoveFontStyle ? "accessible-font" : ""}
+        ${accessibility.isDyslexicFont ? "dyslexic-font" : ""}
+        `}
+        style={{
+          fontSize: `${1 * accessibility.fontSizeAdjust}rem`,
+        }}
+      >
+        <Navbar />
+        <Outlet />
+        <Footer />
+      </article>
+    </>
   );
-}*/
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Root />,
-    children: [{ path: "/", element: <Home /> }],
-  },
-]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
+}

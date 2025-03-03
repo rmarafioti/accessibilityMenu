@@ -1,31 +1,29 @@
-/*import { useState } from "react";
+import { useState } from "react";
 import { IoAccessibility } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
-import Toggle from "../components/Toggle";*/
+
+import Toggle from "./Toggle";
 
 import styles from "../layout/navbar.module.css";
 
-export default function Navbar(/*{
+export default function AccessMenu({
   accessibility,
-  adjustFontSize,
   toggleSetting,
+  adjustFontSize,
   resetAccessibility,
-}*/) {
-  /*const [isMenuVisible, setIsMenuVisible] = useState(false);*/
+}) {
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   return (
     <>
-      <nav>
-        <p>This is my Navbar</p>
-        {/*<IoAccessibility
-          className={styles.accessIcon}
-          role="button"
-          onClick={() => setIsMenuVisible(true)}
-        />*/}
-      </nav>
+      <IoAccessibility
+        className={styles.accessIcon}
+        role="button"
+        onClick={() => setIsMenuVisible(true)}
+      />
 
-      {/*{isMenuVisible && (
+      {isMenuVisible && (
         <menu className={styles.accessMenu}>
           <div className={styles.headerSection}>
             <p className={styles.menuHeader}>Accessibility Menu</p>
@@ -111,7 +109,7 @@ export default function Navbar(/*{
             Reset
           </button>
         </menu>
-      )}*/}
+      )}
     </>
   );
 }
