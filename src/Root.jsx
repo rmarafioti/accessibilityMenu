@@ -4,6 +4,8 @@ import AccessMenu from "./components/AccessMenu.jsx";
 import Navbar from "./layout/Navbar.jsx";
 import Footer from "./layout/Footer.jsx";
 
+import cursorSVG from "./cursors/arrow.svg";
+
 import "./styles/globalmenucontrols.css";
 
 export default function Root() {
@@ -25,7 +27,11 @@ export default function Root() {
   }, [accessibility.isThemeDark]);
 
   useEffect(() => {
-    document.body.classList.toggle("large-cursor", accessibility.isCursorLarge);
+    if (accessibility.isCursorLarge) {
+      document.body.style.cursor = `url(${cursorSVG}), auto`;
+    } else {
+      document.body.style.cursor = "auto";
+    }
   }, [accessibility.isCursorLarge]);
 
   const adjustFontSize = (increment) => {
