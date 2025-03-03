@@ -38,7 +38,3 @@ article {
     font-family: "OpenDyslexic", Arial, sans-serif;
   }
   
-  /* unique styles */
-  .header, .subHeaders {
-    margin: 4rem;
-  }
