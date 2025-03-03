@@ -56,7 +56,7 @@
 }
 
 .large-cursor {
-    cursor: url("/cursors/arrow_white\ outline.svg") 12 12, auto;
+    cursor: url("/arrow.svg"), auto;
 }
 
 
