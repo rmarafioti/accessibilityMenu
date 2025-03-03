@@ -4,8 +4,7 @@ import AccessMenu from "./components/AccessMenu.jsx";
 import Navbar from "./layout/Navbar.jsx";
 import Footer from "./layout/Footer.jsx";
 
-import "./index.css";
-import "./app.css";
+import "./styles/globalmenucontrols.css";
 
 export default function Root() {
   const [accessibility, setAccessibility] = useState({
@@ -17,7 +16,6 @@ export default function Root() {
     isCursorLarge: false,
     fontSizeAdjust: 1,
   });
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute(

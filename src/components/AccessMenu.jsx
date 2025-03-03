@@ -5,7 +5,7 @@ import { FaMinus } from "react-icons/fa6";
 
 import Toggle from "./Toggle";
 
-import styles from "../layout/navbar.module.css";
+import styles from "../styles/accessmenu.module.css";
 
 export default function AccessMenu({
   accessibility,
