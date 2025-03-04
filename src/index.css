@@ -56,7 +56,7 @@
 }
 
 .large-cursor {
-  cursor: url('/vite.svg') 12 12, auto;
+  cursor: url('/arrow.svg') 12 12, auto;
 }
 
 
@@ -68,11 +68,10 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: Black;
 }
 a:hover {
-  color: #535bf2;
+  color: black;
 }
 
 nav,
@@ -142,10 +141,6 @@ button:focus-visible {
 [data-theme="light"] {
   color: var(--text-color);
   background-color: var(--background-color);
-}
-
-[data-theme="light"] a:hover {
-  color: var(--link-hover);
 }
 
 [data-theme="light"] button {
