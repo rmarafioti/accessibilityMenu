@@ -55,11 +55,19 @@
   font-style: italic;
 }
 
-.large-cursor {
-  cursor: url('/pointerGPT.svg') 12 12, auto;
+/* large cursor styling*/
+.large-cursor-arrow {
+  cursor: url('/arrow.svg') 12 12, auto;
 }
 
+.large-cursor-pointer {
+  cursor: url('/pointer.svg') 12 12, auto;
+}
 
+.large-cursor-arrow *,
+.large-cursor-pointer * {
+  cursor: inherit;
+}
 
 body {
   font-family: "OpenDyslexic", Arial, sans-serif;

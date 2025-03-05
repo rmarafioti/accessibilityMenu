@@ -94,10 +94,12 @@ export default function AccessMenu({
               <div className={styles.resizingContainer}>
                 <FaMinus
                   className={styles.sizeItem}
+                  role="button"
                   onClick={() => adjustFontSize(-0.1)}
                 />
                 <FaPlus
                   className={styles.sizeItem}
+                  role="button"
                   onClick={() => {
                     adjustFontSize(0.1);
                   }}

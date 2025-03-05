@@ -78,6 +78,7 @@
   background-color: #c8c3c3;
   cursor: pointer;
 }
+
 .sizeItem:hover {
   border: 1px solid #242424;
 }

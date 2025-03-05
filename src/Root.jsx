@@ -26,12 +26,34 @@ export default function Root() {
 
   useEffect(() => {
     if (accessibility.isCursorLarge) {
-      document.body.classList.add("large-cursor");
-      console.log("Cursor is LARGE", document.body.className);
-    } else {
-      document.body.classList.remove("large-cursor");
-      console.log("Cursor is NORMAL", document.body.className);
+      document.body.classList.add("large-cursor-arrow");
+
+      // Function to dynamically switch cursors
+      const handleMouseMove = (e) => {
+        const target = e.target.closest(
+          "button, a, input, select, textarea, [role='button']"
+        );
+        document.body.classList.toggle("large-cursor-pointer", !!target);
+        document.body.classList.toggle("large-cursor-arrow", !target);
+      };
+
+      document.addEventListener("mousemove", handleMouseMove);
+
+      return () => {
+        document.body.classList.remove(
+          "large-cursor-arrow",
+          "large-cursor-pointer"
+        );
+        document.removeEventListener("mousemove", handleMouseMove);
+      };
     }
+
+    return () => {
+      document.body.classList.remove(
+        "large-cursor-arrow",
+        "large-cursor-pointer"
+      );
+    };
   }, [accessibility.isCursorLarge]);
 
   const adjustFontSize = (increment) => {
