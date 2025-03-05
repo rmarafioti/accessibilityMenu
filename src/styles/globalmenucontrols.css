@@ -1,0 +1,40 @@
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* important for accessibility font reszing */
+  .appContainer {
+    font-size: 1rem;
+  }
+  
+  .header {
+    font-size: 2.5em; /* 2.5x the size of .app-container */
+  }
+  
+  .subHeader {
+    font-size: 2em; /* 2x the size of .app-container */
+  }
+  
+  p {
+    font-size: 1.2em; /* 1.2x the size of .app-container */
+  }
+  
+  /* accessibility controls styles */
+  .grey-images img {
+    filter: grayscale(100%);
+  }
+  
+  .hide-images img {
+    visibility: hidden;
+  }
+  
+  .accessible-font {
+    font-family: Arial, Verdana, sans-serif;
+  }
+  
+  .dyslexic-font {
+    font-family: "OpenDyslexic", Arial, sans-serif;
+  }
+  

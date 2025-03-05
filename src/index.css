@@ -10,7 +10,7 @@
   font-weight: 400;
 
   width: 100%;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -55,10 +55,19 @@
   font-style: italic;
 }
 
-.large-cursor {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path fill="black" stroke="white" stroke-width="2" d="M3 2v20l7-7l5 7l6-4l-5-7l7-5z"/></svg>') 12 12, auto;
+/* large cursor styling*/
+.large-cursor-arrow {
+  cursor: url('/arrow.svg') 12 12, auto;
 }
 
+.large-cursor-pointer {
+  cursor: url('/pointer.svg') 12 12, auto;
+}
+
+.large-cursor-arrow *,
+.large-cursor-pointer * {
+  cursor: inherit;
+}
 
 body {
   font-family: "OpenDyslexic", Arial, sans-serif;
@@ -67,30 +76,28 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: Black;
 }
 a:hover {
-  color: #535bf2;
+  color: black;
 }
 
 nav,
 footer {
   display: flex;
   justify-content: center;
-  padding: 1rem;
   width: 100%;
   border-bottom: 1px solid #242424;
 }
 
 nav {
-  justify-content: space-between;
-  align-items: center;
+  margin-bottom: 4rem;
 }
 
 footer {
   border-top: 1px solid #242424;
   border-bottom: none;
+  margin-top: 4rem;
 }
 
 h1 {
@@ -142,10 +149,6 @@ button:focus-visible {
 [data-theme="light"] {
   color: var(--text-color);
   background-color: var(--background-color);
-}
-
-[data-theme="light"] a:hover {
-  color: var(--link-hover);
 }
 
 [data-theme="light"] button {

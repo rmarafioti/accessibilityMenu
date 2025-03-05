@@ -1,26 +1,9 @@
-import "./App.css";
+import { Link } from "react-router";
+import styles from "./styles/home.module.css";
 
-function App({ accessibility }) {
-  const {
-    isImagesHidden,
-    isImagesGreyScale,
-    isRemoveFontStyle,
-    isDyslexicFont,
-    fontSizeAdjust,
-  } = accessibility;
-
+export default function Home() {
   return (
-    <article
-      className={`appContainer
-        ${isImagesHidden ? "hide-images" : ""}
-    ${isImagesGreyScale ? "grey-images" : ""}
-    ${isRemoveFontStyle ? "accessible-font" : ""}
-    ${isDyslexicFont ? "dyslexic-font" : ""}
-    `}
-      style={{
-        fontSize: `${1 * fontSizeAdjust}rem`,
-      }}
-    >
+    <>
       <div>
         <img
           src="https://fastly.picsum.photos/id/794/200/300.jpg?hmac=uZge4lPPf2bQz7AS6pyH7_nwhFp9IQ3OPKOpQ33Zypk"
@@ -35,12 +18,16 @@ function App({ accessibility }) {
           alt="A foggy road lined with tall, lush green trees stretching into the distance. The dense mist obscures the background, creating a mysterious and tranquil atmosphere. The empty road disappears into the haze, adding depth and a sense of solitude."
         />
       </div>
-      <h1 className="header">Welcome to my landing page</h1>
+      <h1 className="header" id={styles.header}>
+        Welcome to my landing page
+      </h1>
       <img
         src="https://fastly.picsum.photos/id/797/700/300.jpg?hmac=DbHIjw-KKALqN5vxgNEA2Ns7WENvcc2RyDYi12NaXe8"
         alt="A red umbrella covered in raindrops is held in the foreground on a rainy city street at night. The background is blurred with glowing bokeh lights from streetlights, neon signs, and reflections on the wet pavement, creating a moody and atmospheric scene."
       />
-      <h2 className="subHeaders">Header Two</h2>
+      <h2 className="subHeaders" id={styles.subHeaders}>
+        Header Two
+      </h2>
       <p>
         Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia urna sem
         metus habitasse tempus tempus dolor ut. Maecenas platea aenean porta
@@ -54,7 +41,9 @@ function App({ accessibility }) {
         src="https://fastly.picsum.photos/id/143/700/300.jpg?hmac=H8Y4LkdS-9uTri7NKfh2yL_f1Vc1FnBUp52Mj2la6_U"
         alt="A weathered wooden deck scattered with small green and orange leaves. The aged planks have visible cracks and grain patterns, adding texture. The fallen leaves are randomly dispersed, creating a natural, organic pattern on the worn surface."
       />
-      <h3 className="subHeaders">Header Three</h3>
+      <h3 className="subHeaders" id={styles.subHeaders}>
+        Header Three
+      </h3>
       <p>
         Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia urna sem
         metus habitasse tempus tempus dolor ut. Maecenas platea aenean porta
@@ -68,7 +57,9 @@ function App({ accessibility }) {
         src="https://fastly.picsum.photos/id/905/700/300.jpg?hmac=9YxDbhi3xJInltQW_hUvE6uJcoen3EG0ngPWp_pa4xo"
         alt="A breathtaking snow-covered mountain landscape with jagged peaks rising against a clear blue sky. The slopes are blanketed in white, with dark rocky outcrops visible beneath the snow. In the foreground, a partially frozen glacial lake reflects the surrounding peaks, adding to the serene and majestic atmosphere."
       />
-      <h4 className="subHeaders">Header Four</h4>
+      <h4 className="subHeaders" id={styles.subHeaders}>
+        Header Four
+      </h4>
       <p>
         Lorem ipsum odor amet, consectetuer adipiscing elit. Lacinia urna sem
         metus habitasse tempus tempus dolor ut. Maecenas platea aenean porta
@@ -78,8 +69,7 @@ function App({ accessibility }) {
         Euismod metus accumsan venenatis tempor mus ut habitant. Proin curae mi
         porta interdum penatibus ridiculus tincidunt ligula id.
       </p>
-    </article>
+      <Link to="/testpage">Next Page</Link>
+    </>
   );
 }
-
-export default App;
