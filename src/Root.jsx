@@ -33,7 +33,7 @@ export default function Root() {
         const target = e.target.closest(
           "button, a, input, select, textarea, [role='button']"
         );
-        document.body.classList.toggle("large-cursor-pointer", !!target);
+        document.body.classList.toggle("large-cursor-pointer", target);
         document.body.classList.toggle("large-cursor-arrow", !target);
       };
 
